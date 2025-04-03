@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+
+
+@font-face{
+    font-family: 'Boldonese';
+    src: url('../assets/fonts/Boldonese.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face{
+    font-family: 'RobotoFlex';
+    src: url('../assets/fonts/RobotoFlex.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'RobotoFlex', sans-serif;
+    background-color: #c6c6c6;
+
+}

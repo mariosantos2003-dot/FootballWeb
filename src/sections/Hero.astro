@@ -1,0 +1,24 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+import Title from "../components/Title.astro";
+import CardSlider from "../layouts/CardSlider.astro";
+---
+
+
+
+<main>
+    
+    <img src="/background.webp" alt="" class="w-full object-cover absolute h-250 -z-0" />
+    <Header />
+    <section class="relative w-full">
+        <div class="relative w-full h-screen">
+            <Title />
+            <!-- ...existing hero content... -->
+        </div>
+        
+        <div class="h-150 mb-100">
+            <CardSlider />
+        </div>
+    </section>
+</main>
