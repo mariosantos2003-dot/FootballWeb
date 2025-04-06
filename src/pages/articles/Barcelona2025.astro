@@ -1,0 +1,151 @@
+---
+import Article from "../../layouts/Article.astro";
+import Card from "../../components/Card.astro";
+
+const frontmatter = {
+  title: "Barcelona League Analysis",
+  description: "A deep dive into how Hansi Flick is transforming Barcelona's style of play and the impact it's having on their La Liga campaign.",
+  date: "April 6, 2025",
+  author: "Mario Santos",
+  image: "/src/assets/images/barcelona.jpg",
+  category: "Tactical Analysis"
+};
+---
+
+<Article frontmatter={frontmatter}>
+  <h2>Barcelona's New Era Under Hansi Flick</h2>
+  
+  <p>
+    Since taking over as manager, Hansi Flick has revolutionized Barcelona's playing style, 
+    bringing back the intensity and possession-based football that once made them the most 
+    feared team in Europe.
+  </p>
+  
+  <h3>Tactical Evolution</h3>
+  
+  <p>
+    Flick has implemented a high-pressing system that has allowed Barcelona to dominate 
+    possession in the final third. The team now averages over 65% possession, with much of 
+    that being in dangerous areas.
+  </p>
+  
+  <h3>Key Players</h3>
+  
+  <p>
+    Lamine Yamal has been the standout performer, with 15 goals and 12 assists this season. 
+    His partnership with Raphinha and Lewandowski has created one of the most dangerous 
+    attacking trios in La Liga.
+  </p>
+  
+  <p>
+    In midfield, Pedri has regained his best form, controlling games with his exceptional 
+    vision and passing ability. The defensive restructuring has also been impressive, with 
+    Araújo and Koundé forming a solid partnership at the back.
+  </p>
+  
+  <h3>Challenges Ahead</h3>
+  
+  <p>
+    While the domestic form has been impressive, the real test will come in the Champions 
+    League knockout stages. Barcelona will need to maintain their intensity against Europe's 
+    elite teams if they hope to lift the trophy for the first time since 2015.
+  </p>
+
+  <!-- Gráficos usando los slots nombrados -->
+  <div slot="chart-1">
+    <h3 class="bold">Lewandowski Percentiles This Season</h4>
+    <img src="/src/assets/images/Fcbarcelona/lewachart.png" alt="Lewandowski Percentiles" class="w-full h-100 object-cover rounded-lg shadow-lg" />
+  </div>
+  
+  <div slot="chart-2">
+    <h4 class="text-xl font-bold mb-3">Key Performance Metrics</h4>
+    <div class="bg-gray-850 p-4 rounded relative h-64 flex items-center justify-center">
+      <!-- Placeholder para un gráfico de estadísticas -->
+      <div class="w-full grid grid-cols-2 gap-4">
+        <div class="stat-container">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-green-500">65%</div>
+            <div class="text-xs text-gray-400 mt-1">Possession</div>
+            <div class="w-full bg-gray-700 h-2 mt-2 rounded-full">
+              <div class="bg-green-500 h-2 rounded-full" style="width: 65%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="stat-container">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-blue-500">2.8</div>
+            <div class="text-xs text-gray-400 mt-1">Goals/Game</div>
+            <div class="w-full bg-gray-700 h-2 mt-2 rounded-full">
+              <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="stat-container">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-purple-500">14.3</div>
+            <div class="text-xs text-gray-400 mt-1">Shots/Game</div>
+            <div class="w-full bg-gray-700 h-2 mt-2 rounded-full">
+              <div class="bg-purple-500 h-2 rounded-full" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="stat-container">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-yellow-500">0.8</div>
+            <div class="text-xs text-gray-400 mt-1">Goals Conceded/Game</div>
+            <div class="w-full bg-gray-700 h-2 mt-2 rounded-full">
+              <div class="bg-yellow-500 h-2 rounded-full" style="width: 30%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mt-2 text-sm text-gray-400">Barcelona's attacking metrics have improved dramatically, while defensive solidity remains a strength.</p>
+  </div>
+  
+  <!-- Galería de imágenes -->
+  <div slot="gallery" class="space-y-4">
+    <div class="overflow-hidden rounded-lg shadow-lg">
+      <img src="/src/assets/images/barcelona.jpg" alt="Barcelona celebration" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+      <div class="p-2 bg-gray-850 text-xs text-gray-400">Celebrating a goal at Camp Nou</div>
+    </div>
+  </div>
+  <div slot="gallery" class="space-y-4">
+    <div class="overflow-hidden rounded-lg shadow-lg">
+      <img src="/src/assets/images/barcelona.jpg" alt="Flick instructing players" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+      <div class="p-2 bg-gray-850 text-xs text-gray-400">Hansi Flick giving tactical instructions</div>
+    </div>
+  </div>
+  <div slot="gallery" class="space-y-4">
+    <div class="overflow-hidden rounded-lg shadow-lg">
+      <img src="/src/assets/images/barcelona.jpg" alt="Yamal in action" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
+      <div class="p-2 bg-gray-850 text-xs text-gray-400">Lamine Yamal dribbling past defenders</div>
+    </div>
+  </div>
+  
+  <!-- Artículos relacionados -->
+  <div slot="related-articles">
+    <Card
+      title="Real Madrid Tactical Analysis"
+      description="How Ancelotti's team is evolving this season"
+      image="/src/assets/images/arsenal.jpg"
+      link="/articles/madrid2025"
+    />
+  </div>
+  <div slot="related-articles">
+    <Card
+      title="La Liga Title Race"
+      description="Analyzing the contenders for this season's title"
+      image="/src/assets/images/arsenal.jpg"
+      link="/articles/laliga2025"
+    />
+  </div>
+  <div slot="related-articles">
+    <Card
+      title="Champions League Preview"
+      description="Can Spanish teams dominate Europe again?"
+      image="/src/assets/images/ManCity.webp"
+      link="/articles/ucl2025"
+    />
+  </div>
+</Article>
