@@ -17,7 +17,7 @@ const { frontmatter } = Astro.props;
     <title>{frontmatter.title}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
-  <body class="bg-gradient-to-b from-gray-900 to-gray-800 min-h-screen text-gray-200">
+  <body class=" bg-black min-h-screen text-gray-200">
     <!-- Header con navegación básica -->
     
     <Header/>
@@ -58,7 +58,7 @@ const { frontmatter } = Astro.props;
       </div>
       
       <!-- Artículo principal -->
-      <article class="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700">
+      <article class="bg-black rounded-xl shadow-xl overflow-hidden border border-gray-700">
         <div class="p-8 lg:p-12">
           <!-- Introducción o resumen -->
           {frontmatter.description && (

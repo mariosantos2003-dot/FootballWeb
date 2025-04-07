@@ -1,0 +1,90 @@
+---
+interface Props {
+  src: string;
+  title?: string;
+  aspectRatio?: "16/9" | "4/3" | "1/1";
+  thumbnail?: string;
+  autoplay?: boolean;
+  controls?: boolean;
+  loop?: boolean;
+  muted?: boolean;
+}
+
+const { 
+  src, 
+  title = "", 
+  aspectRatio = "16/9",
+  thumbnail = "",
+  autoplay = false,
+  controls = true,
+  loop = false,
+  muted = false
+} = Astro.props;
+
+const aspectClass = {
+  "16/9": "aspect-video",
+  "4/3": "aspect-[4/3]",
+  "1/1": "aspect-square",
+}[aspectRatio] || "aspect-video";
+
+// Determinar el tipo de archivo de video
+const getVideoType = (src: string) => {
+  const extension = src.split('.').pop()?.toLowerCase();
+  switch (extension) {
+    case 'mp4': return 'video/mp4';
+    case 'webm': return 'video/webm';
+    case 'ogg': return 'video/ogg';
+    default: return 'video/mp4';
+  }
+};
+
+const videoType = getVideoType(src);
+---
+
+<div class="video-container mb-6">
+  {title && <h4 class="text-lg font-semibold mb-2">{title}</h4>}
+  
+  <div class={`${aspectClass} w-full rounded-lg overflow-hidden bg-gray-900 shadow-lg`}>
+    <video 
+      class="w-full h-full object-cover"
+      poster={thumbnail}
+      preload="metadata"
+      title={title}
+      controls={controls}
+      autoplay={autoplay}
+      loop={loop}
+      muted={muted}
+      playsinline
+    >
+      <source src={src} type={videoType} />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  
+  <div class="mt-2 text-sm text-gray-400">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .video-container {
+    position: relative;
+  }
+  
+  video {
+    display: block;
+  }
+  
+  video:hover {
+    cursor: pointer;
+  }
+  
+  /* Estilos personalizados para los controles de video */
+  video::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  video::-webkit-media-controls-panel {
+    padding: 0 10px;
+  }
+</style>

@@ -1,0 +1,134 @@
+---
+import "../styles/global.css";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us | FootballWeb</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body class="bg-black min-h-screen text-gray-200">
+    <Header />
+
+    <main>
+      <!-- Hero Section -->
+      <section class="relative py-20">
+        <div class="absolute inset-0 bg-black opacity-60 z-0"></div>
+        <div class="bg-[url('/src/assets/images/team-photo.jpg')] bg-cover bg-center absolute inset-0 z-[-1]"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative z-10 text-center">
+          <h1 class="text-5xl font-bold text-white mb-6">About FootballWeb</h1>
+          <div class="w-24 h-1 bg-green-500 mx-auto mb-8"></div>
+          <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+            The premier destination for in-depth football analysis, tactics, and data-driven insights.
+          </p>
+        </div>
+      </section>
+
+      <!-- Our Story Section with Author Profile -->
+      <section class="py-16 bg-black">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="text-3xl font-bold text-white mb-6">Our Story</h2>
+              <div class="w-16 h-1 bg-green-500 mb-6"></div>
+              <p class="text-gray-300 mb-4">
+                Founded in 2023, FootballWeb was born from a passion for the beautiful game and a desire to go beyond the headlines. 
+                I believe football analysis should be accessible, insightful, and engaging.
+              </p>
+              <p class="text-gray-300 mb-4">
+                What started as a small blog has grown into a platform where I share tactical insights, 
+                match analysis, and stories that showcase the nuances of football that often go unnoticed.
+              </p>
+              <p class="text-gray-300">
+                My mission is simple: to provide the most comprehensive and thought-provoking football content on the web, 
+                helping fans understand the game at a deeper level.
+              </p>
+            </div>
+            
+            <!-- Author Profile - Moved from Team section -->
+            <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+              <div class="h-64 overflow-hidden">
+                <img 
+                  src="/src/assets/images/team-member1.jpg" 
+                  alt="Mario Santos" 
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-2">Mario Santos</h3>
+                <p class="text-green-400 mb-4">Founder & Lead Analyst</p>
+                <p class="text-gray-400 mb-4">
+                  Former youth coach with a UEFA B license and a passion for tactical analysis. I've spent the last decade studying and breaking down matches from around the world.
+                </p>
+                <div class="flex space-x-4">
+                  <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-white">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What We Do Section -->
+      <section class="py-16 bg-black border-amber-50">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-white mb-6">What I Do</h2>
+            <div class="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-700">
+              <div class="bg-green-600 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <i class="fas fa-chart-line text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4">Match Analysis</h3>
+              <p class="text-gray-300">
+                Detailed breakdowns of key matches, focusing on tactics, player performances, and decisive moments.
+              </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-700">
+              <div class="bg-green-600 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <i class="fas fa-users text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4">Team Profiles</h3>
+              <p class="text-gray-300">
+                In-depth looks at clubs, their playing styles, evolution, and strategies across different competitions.
+              </p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-gray-900 p-6 rounded-xl shadow-lg border border-gray-700">
+              <div class="bg-green-600 p-4 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <i class="fas fa-user-alt text-white text-2xl"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-4">Player Spotlights</h3>
+              <p class="text-gray-300">
+                Focused analysis on individual players, their roles, development, and impact on their teams.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <Footer />
+  </body>
+</html>

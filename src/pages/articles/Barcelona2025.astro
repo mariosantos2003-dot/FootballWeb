@@ -1,7 +1,7 @@
 ---
 import Article from "../../layouts/Article.astro";
 import Card from "../../components/Card.astro";
-
+import VideoEmbed from "../../components/VideoEmbed.astro";
 const frontmatter = {
   title: "Barcelona League Analysis",
   description: "A deep dive into how Hansi Flick is transforming Barcelona's style of play and the impact it's having on their La Liga campaign.",
@@ -105,10 +105,19 @@ const frontmatter = {
   
   <!-- Galería de imágenes -->
   <div slot="gallery" class="space-y-4">
+    
     <div class="overflow-hidden rounded-lg shadow-lg">
-      <img src="/src/assets/images/barcelona.jpg" alt="Barcelona celebration" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-300" />
-      <div class="p-2 bg-gray-850 text-xs text-gray-400">Celebrating a goal at Camp Nou</div>
-    </div>
+      <VideoEmbed
+        src="/src/assets/images/Fcbarcelona/Salida.mp4"
+        aspectRatio="16/9"
+        thumbnail="/src/assets/images/barcelona.jpg"
+        controls={true}
+        autoplay={false}
+        loop={false}
+        muted={false}
+        />
+        <div class="bg-gray-850 text-xs text-gray-400 text-center ">Salida en Corto</div>
+    </div> 
   </div>
   <div slot="gallery" class="space-y-4">
     <div class="overflow-hidden rounded-lg shadow-lg">
